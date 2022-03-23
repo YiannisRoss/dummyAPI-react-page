@@ -1,6 +1,8 @@
 #container {
   display: flex;
   flex-direction: column;
+  font-size: 15px;
+line-height: 1.5;
 }
 
 
@@ -12,26 +14,43 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #f1f1f1 !important;
 }
 
 #boxes-container {
   
   width: auto;
-  height: auto;
+  height: 25vh;
   flex-direction: row;
   display: flex;
   justify-content: space-around;
 }
 
   .box {
-    background-color: blueviolet;
-    border: 1px solid black;
-    width: 80%;
+    background-color: #ccc !important;
+        border: 1px solid black;
+    width: 20%;
+    height: 20%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: 10%;
   }
 #data-lists-container {
-  background-color: aqua;
+  
   width: auto;
-  height: auto;
+  height: 70vh;
+  justify-content: space-around;
+  display: flex;
 }
+
+  .data-list {
+    position: relative;
+    top: 10%;
+    width: 30%;
+    height: 70%;
+    background-color: #fff !important;
+  }
 

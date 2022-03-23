@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Box from './Box';
+import UsersList from './UsersList';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,6 +40,12 @@ class App extends React.Component {
               {boxList}
             </div>
             <div id="data-lists-container">
+              <div id="users-list" className='data-list'>
+                <UsersList />
+              </div>
+              <div id="titles-distribution" className='data-list'>
+                Titles distribution
+              </div>
 
             </div>
           </div>

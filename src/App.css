@@ -8,4 +8,30 @@
   display: flex;
 }
 
+#page-contents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#boxes-container {
+  
+  width: auto;
+  height: auto;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+}
+
+  .box {
+    background-color: blueviolet;
+    border: 1px solid black;
+    width: 80%;
+    text-align: center;
+  }
+#data-lists-container {
+  background-color: aqua;
+  width: auto;
+  height: auto;
+}
 

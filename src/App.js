@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Box from './Box';
 import UsersList from './UsersList';
+import Element from './UsersList';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,7 +42,8 @@ class App extends React.Component {
             </div>
             <div id="data-lists-container">
               <div id="users-list" className='data-list'>
-                <UsersList />
+                <UsersList itemsPerPage={10} />
+
               </div>
               <div id="titles-distribution" className='data-list'>
                 Titles distribution

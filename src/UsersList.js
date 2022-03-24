@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
-
+import "./UsersList.css"
 // Example items, to simulate fetching from another resources.
 
 
 function Items({ currentItems }) {
     return (
-        <>
-            {currentItems &&
-                currentItems.map((item) => (
+        <><table>
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
 
-                    < div >
-                        <h3>Item #{item.firstName}</h3>
-                    </div>
-                ))
-            }
+
+                {currentItems &&
+                    currentItems.map((item) => (
+                        <tr>
+                            <td>{item.id}</td>
+                            <td>{item.title}</td>
+                            <td>{item.firstName}</td>
+                            <td>{item.lastName}</td>
+                            <td>{item.email}</td>
+                        </tr>
+                    ))
+                }
+
+            </tbody>
+        </table>
+
         </>
     );
 }
@@ -86,6 +103,7 @@ function UsersList({ itemsPerPage }) {
                 pageCount={pageCount}
                 previousLabel="< previous"
                 renderOnZeroPageCount={null}
+                className="paginate-component"
             />
         </>
     );

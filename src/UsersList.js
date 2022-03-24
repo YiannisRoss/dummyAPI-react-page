@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
-import "./UsersList.css"
+import "./UsersList.scss"
 // Example items, to simulate fetching from another resources.
 
 
@@ -69,6 +69,37 @@ function UsersList({ itemsPerPage }) {
                         setItems(result.data)
                         setCurrentItems(result.data.slice(itemOffset, endOffset));
                         setPageCount(Math.ceil(result.data.length / itemsPerPage));
+                        getUserEmailFromAPI(result.data[0])
+                    },
+                    (error) => {
+                        console.log(error)
+                    }
+                )
+        }
+
+        async function getUserEmailFromAPI(user) {
+            console.log("fetching emails...")
+            return fetch(`https://dummyapi.io/data/v1/user/${user.id}`, {
+                method: 'GET',
+                headers: {
+                    'app-id': '623ba0ddb2cbd40f0cdeed0b',
+                },
+            })
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        console.log("email call result:")
+                        console.log(result)
+                        let newItems = items
+                        //go over newItems array
+                        //pass result.email to each |item|
+                        //setItems(newItems)
+                        for (let i = 0; i < items.length; i++) {
+
+                        }
+                        // setItems(result.data)
+                        // setCurrentItems(result.data.slice(itemOffset, endOffset));
+                        // setPageCount(Math.ceil(result.data.length / itemsPerPage));
                     },
                     (error) => {
                         console.log(error)
@@ -89,11 +120,11 @@ function UsersList({ itemsPerPage }) {
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
         setItemOffset(newOffset);
+
     };
 
     return (
         <>
-            <button onClick={() => { console.log(items) }}></button>
             <Items currentItems={currentItems} />
             <ReactPaginate
                 breakLabel="..."

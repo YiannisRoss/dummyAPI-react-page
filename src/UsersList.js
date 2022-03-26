@@ -69,7 +69,10 @@ function UsersList({ itemsPerPage }) {
                         setItems(result.data)
                         setCurrentItems(result.data.slice(itemOffset, endOffset));
                         setPageCount(Math.ceil(result.data.length / itemsPerPage));
-                        getUserEmailFromAPI(result.data[0])
+                        for (let i = 0; i < result.data.length; i++) {
+                            getUserEmailFromAPI(result.data[i], result.data)
+
+                        }
                     },
                     (error) => {
                         console.log(error)
@@ -77,7 +80,7 @@ function UsersList({ itemsPerPage }) {
                 )
         }
 
-        async function getUserEmailFromAPI(user) {
+        async function getUserEmailFromAPI(user, items) {
             console.log("fetching emails...")
             return fetch(`https://dummyapi.io/data/v1/user/${user.id}`, {
                 method: 'GET',
@@ -88,18 +91,18 @@ function UsersList({ itemsPerPage }) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log("email call result:")
-                        console.log(result)
-                        let newItems = items
-                        //go over newItems array
-                        //pass result.email to each |item|
-                        //setItems(newItems)
-                        for (let i = 0; i < items.length; i++) {
 
+
+                        for (let i = 0; i < items.length; i++) {
+                            if (items[i].id === user.id) {
+                                items[i].email = result.email
+                                setItems(items)
+                            }
                         }
-                        // setItems(result.data)
-                        // setCurrentItems(result.data.slice(itemOffset, endOffset));
-                        // setPageCount(Math.ceil(result.data.length / itemsPerPage));
+
+                        setCurrentItems(items.slice(itemOffset, endOffset));
+                        setPageCount(Math.ceil(items.length / itemsPerPage));
+
                     },
                     (error) => {
                         console.log(error)
@@ -108,7 +111,6 @@ function UsersList({ itemsPerPage }) {
         }
 
         const endOffset = itemOffset + itemsPerPage;
-        console.log(`Loading items from ${itemOffset} to ${endOffset}`);
         getItemsFromAPI()
 
     }, [itemOffset, itemsPerPage]);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
-import "./UsersList.scss"
+import "./UsersList.css"
 // Example items, to simulate fetching from another resources.
 
 

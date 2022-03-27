@@ -1,11 +1,13 @@
 * {
   margin: 0 !important; /* CSS reset */
-	padding: 0 !important;
-	border: 0 !important;
+	padding: 0;
+	/* border: 0 !important; */
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
   box-sizing: border-box;
+
+
 }
 
 
@@ -46,31 +48,14 @@ line-height: 1.5;
   justify-content: space-around;
 }
 
-  .box {
-    background-color: #ccc !important;
-        border: 1px solid black;
-    width: 20%;
-    height: 20%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: relative;
-    top: 10%;
-  }
+  
 #data-lists-container {
   
   width: auto;
   height: 70vh;
-  justify-content: space-around;
+  justify-content: space-evenly;
   display: flex;
 }
 
-  .data-list {
-    position: relative;
-    top: 10%;
-    width: 30%;
-    height: 70%;
-    background-color: #fff !important;
-  }
+  
 

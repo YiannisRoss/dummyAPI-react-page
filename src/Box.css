@@ -1,0 +1,13 @@
+.box {
+    background-color: #ccc !important;
+    border: 1px solid black;
+    width: 20%;
+    height: 20%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    top: 10%;
+    box-shadow: 10px 5px 5px rgb(145, 137, 137);
+  }

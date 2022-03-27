@@ -1,0 +1,28 @@
+#navbar {
+
+    width: 100vw;
+    height: 5vh;
+    color: #fff !important;
+    background-color: #000 !important;
+
+    display: flex;
+    // justify-content: center;
+
+    button{
+        
+    }
+
+    #title-container {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        h1{
+            width: fit-content;
+            font-size: large;
+
+        }
+        
+    }
+}
+

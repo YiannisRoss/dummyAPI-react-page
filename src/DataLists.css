@@ -41,3 +41,13 @@
       max-width: 60%;
       display: flex; 
   }
+
+  #pie-chart-popup{
+      position: absolute;
+      margin-top: -5%;
+      bottom: 0x;
+      width: 50%;
+      height: 10%;
+      background-color: red;
+        display: none;
+    }

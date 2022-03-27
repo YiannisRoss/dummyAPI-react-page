@@ -52,10 +52,48 @@ class DataLists extends React.Component {
         }
         return titleOccurences
     }
+
+    togglePieChartPopup(pieSegmentIndex) {
+        console.log('toggle piechart popup called on segment index ' + pieSegmentIndex)
+        let selectedSegment
+        let selectedSegmentText
+        let pieData = this.analyzeUserTitles(this.state.userData)
+
+        switch (pieSegmentIndex) {
+            case 0:
+                selectedSegment = 'mr'
+
+                break;
+            case 1:
+                selectedSegment = 'ms'
+                break;
+            case 2:
+                selectedSegment = 'mrs'
+                break;
+            case 3:
+                selectedSegment = 'miss'
+                break;
+            default:
+        }
+        console.log('should be ' + selectedSegment)
+        selectedSegmentText = `Title "${selectedSegment}" appears ${pieData[selectedSegment]} times`
+
+        let popupElement = document.getElementById('pie-chart-popup')
+        if (popupElement.style.display === 'block') {
+            popupElement.style.display = 'none'
+        }
+        else {
+            popupElement.style.display = 'block'
+            popupElement.innerHTML = selectedSegmentText
+
+        }
+    }
+
     render() {
+        let pieData = this.analyzeUserTitles(this.state.userData)
+
         console.log("data lists state:")
         console.log(this.state.userData)
-        let pieData = this.analyzeUserTitles(this.state.userData)
         console.log("pie data:")
         console.log(pieData)
 
@@ -76,7 +114,18 @@ class DataLists extends React.Component {
                         <p style={{ backgroundColor: '#5599AA' }}>Miss: {pieData['miss']}</p>
                     </div>
                     <div id='pie-chart-container'>
+                        <div id='pie-chart-popup'>
+
+                        </div>
                         <PieChart
+                            onMouseOver={(e, segmentIndex) => {
+
+                                this.togglePieChartPopup(segmentIndex)
+                            }}
+                            onMouseOut={(e, segmentIndex) => {
+
+                                this.togglePieChartPopup(segmentIndex)
+                            }}
                             data={[
                                 { title: 'mr', value: pieData['mr'], color: '#E38627' },
                                 { title: 'ms', value: pieData['ms'], color: '#C13C37' },
@@ -84,15 +133,8 @@ class DataLists extends React.Component {
                                 { title: 'miss', value: pieData['miss'], color: '#5599AA' },
                             ]}
 
-                        // onMouseOver={(e) => {
-                        //     console.log("mouse over")
-                        //     console.log(e)
-                        // }}
 
-                        // label={(labelRenderProps) =>
-                        //     10 | 'ss' | React.ReactElement | undefined | null
 
-                        // }
                         />
                     </div>
                 </div>

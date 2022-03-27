@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Box from './Box';
 import UsersList from './UsersList';
-import Element from './UsersList';
+import { PieChart } from 'react-minimal-pie-chart';
 
 class App extends React.Component {
   constructor(props) {
@@ -46,7 +46,13 @@ class App extends React.Component {
 
               </div>
               <div id="titles-distribution" className='data-list'>
-                Titles distribution
+                <PieChart
+                  data={[
+                    { title: 'One', value: 10, color: '#E38627' },
+                    { title: 'Two', value: 15, color: '#C13C37' },
+                    { title: 'Three', value: 20, color: '#6A2135' },
+                  ]}
+                />;
               </div>
 
             </div>

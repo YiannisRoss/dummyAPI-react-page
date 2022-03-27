@@ -16,8 +16,10 @@
     background-color: #ccc;
     border-radius: 10%;
     box-shadow: 10px 5px 5px rgb(145, 137, 137);
+    padding: 1%;
 
   }
+
 
   #titles-distribution-container{
       display: flex;

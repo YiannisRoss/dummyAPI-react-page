@@ -38,7 +38,7 @@ function Items({ currentItems }) {
 }
 
 
-function UsersList({ itemsPerPage }) {
+function UsersList({ itemsPerPage, sendUserDataToDataList }) {
     // We start with an empty list of items.
 
 
@@ -97,11 +97,13 @@ function UsersList({ itemsPerPage }) {
                             if (items[i].id === user.id) {
                                 items[i].email = result.email
                                 setItems(items)
+
                             }
                         }
 
                         setCurrentItems(items.slice(itemOffset, endOffset));
                         setPageCount(Math.ceil(items.length / itemsPerPage));
+                        sendUserDataToDataList(items)
 
                     },
                     (error) => {

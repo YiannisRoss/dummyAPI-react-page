@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import Box from './Box';
 import UsersList from './UsersList';
 import { PieChart } from 'react-minimal-pie-chart';
+import DataLists from './DataLists';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,19 +42,7 @@ class App extends React.Component {
               {boxList}
             </div>
             <div id="data-lists-container">
-              <div id="users-list" className='data-list'>
-                <UsersList itemsPerPage={10} />
-
-              </div>
-              <div id="titles-distribution" className='data-list'>
-                <PieChart
-                  data={[
-                    { title: 'One', value: 10, color: '#E38627' },
-                    { title: 'Two', value: 15, color: '#C13C37' },
-                    { title: 'Three', value: 20, color: '#6A2135' },
-                  ]}
-                />;
-              </div>
+              <DataLists />
 
             </div>
           </div>

@@ -13,7 +13,8 @@
     top: 10%;
     width: fit-content;
     height: 80%;
-    background-color: #fff !important;
+    background-color: #ccc;
+    border-radius: 10%;
     box-shadow: 10px 5px 5px rgb(145, 137, 137);
 
   }
@@ -23,7 +24,8 @@
       flex-direction: column;
       width: 30%;
       justify-content: space-between;
-      padding-bottom: 10%;
+      padding-bottom: 5%;
+
   }
 
     h3 {
@@ -32,7 +34,6 @@
         font-weight: bold;
     }
   #pie-chart-container {
-      
       width: 70%;
       height: 70%;
       max-width: 60%;

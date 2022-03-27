@@ -1,0 +1,40 @@
+.items {
+  margin-bottom: 1rem;
+}
+
+.next {
+    position: relative;
+    z-index: 10;
+
+}
+td {
+  border: 1px solid rgb(79, 113, 226);
+  border-radius: 5%;
+}
+th {
+  background-color: rgb(79, 113, 226);
+}
+.paginate-component{
+    display: flex;
+    justify-content: space-evenly !important;
+    width: 70%;
+    list-style-type: none;
+    li {
+      background-color: rgb(79, 113, 226);
+      border-radius: 5%;
+      box-shadow: 3px 3px 3px 3px rgb(145, 137, 137);
+
+      border: none;
+      padding: 1% 2%;
+      cursor: pointer;
+      display: inline-block;
+
+      
+    }
+    li:hover {
+      background-color: rgb(55, 78, 155);
+
+    }
+   
+}
+

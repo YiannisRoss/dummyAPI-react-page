@@ -1,0 +1,4 @@
+#pie-chart-legend {
+    display: flex;
+    justify-content: space-evenly;
+}

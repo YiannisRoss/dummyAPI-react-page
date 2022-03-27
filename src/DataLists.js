@@ -69,11 +69,11 @@ class DataLists extends React.Component {
 
                 </div>
                 <div id="titles-distribution" className='data-list'>
-                    <div className="pie-chart-legend">
-                        <p style={{ backgroundColor: '#E38627' }}>Mr</p>
-                        <p style={{ backgroundColor: '#C13C37' }}>Ms</p>
-                        <p style={{ backgroundColor: '#6A2135' }}>Mrs</p>
-                        <p style={{ backgroundColor: '#5599AA' }}>Miss</p>
+                    <div id="pie-chart-legend">
+                        <p style={{ backgroundColor: '#E38627' }}>Mr: {pieData['mr']}</p>
+                        <p style={{ backgroundColor: '#C13C37' }}>Ms: {pieData['ms']}</p>
+                        <p style={{ backgroundColor: '#6A2135' }}>Mrs: {pieData['mrs']}</p>
+                        <p style={{ backgroundColor: '#5599AA' }}>Miss: {pieData['miss']}</p>
                     </div>
                     <PieChart
                         data={[
@@ -83,15 +83,15 @@ class DataLists extends React.Component {
                             { title: 'miss', value: pieData['miss'], color: '#5599AA' },
                         ]}
 
-                        onMouseOver={(e) => {
-                            console.log("mouse over")
-                            console.log(e)
-                        }}
+                    // onMouseOver={(e) => {
+                    //     console.log("mouse over")
+                    //     console.log(e)
+                    // }}
 
-                        label={(labelRenderProps) =>
-                            10 | 'ss' | React.ReactElement | undefined | null
+                    // label={(labelRenderProps) =>
+                    //     10 | 'ss' | React.ReactElement | undefined | null
 
-                        }
+                    // }
                     />;
                 </div>
 

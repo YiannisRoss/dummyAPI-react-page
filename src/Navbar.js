@@ -16,7 +16,6 @@ class Navbar extends React.Component {
 
                 <div id="navbar">
                     <button onClick={() => {
-                        console.log("navbar button clicked")
                         this.props.toggleSidebar()
                     }}>Button</button>
 

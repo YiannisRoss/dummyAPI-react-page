@@ -17,8 +17,7 @@ class DataLists extends React.Component {
     }
 
     sendUserDataToDataList(data) {
-        console.log("Data List reporting user data:")
-        console.log(data)
+
         this.setState({
             userData: data
         });
@@ -49,7 +48,6 @@ class DataLists extends React.Component {
                     break;
 
                 default:
-                // code block
             }
         }
         return titleOccurences

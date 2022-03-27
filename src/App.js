@@ -19,7 +19,6 @@ class App extends React.Component {
   }
 
   toggleSidebar() {
-    console.log("toggle sidebar called")
     this.setState({
       isSidebarVisible: !(this.state.isSidebarVisible)
     });

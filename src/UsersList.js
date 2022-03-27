@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import "./UsersList.scss"
-// Example items, to simulate fetching from another resources.
 
 
 function Items({ currentItems }) {
@@ -39,22 +38,18 @@ function Items({ currentItems }) {
 
 
 function UsersList({ itemsPerPage, sendUserDataToDataList }) {
-    // We start with an empty list of items.
 
 
     const [items, setItems] = useState([])
     const [currentItems, setCurrentItems] = useState(null);
     const [pageCount, setPageCount] = useState(0);
-    // Here we use item offsets; we could also use page offsets
-    // following the API or data you're working with.
+
     const [itemOffset, setItemOffset] = useState(0);
 
 
     useEffect(() => {
-        console.log("users list component did mount")
 
         async function getItemsFromAPI() {
-            console.log("fetching API data...")
             return fetch("https://dummyapi.io/data/v1/user", {
                 method: 'GET',
                 headers: {
@@ -64,14 +59,12 @@ function UsersList({ itemsPerPage, sendUserDataToDataList }) {
                 .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log("API result:")
-                        console.log(result.data)
+
                         setItems(result.data)
                         setCurrentItems(result.data.slice(itemOffset, endOffset));
                         setPageCount(Math.ceil(result.data.length / itemsPerPage));
                         for (let i = 0; i < result.data.length; i++) {
                             getUserEmailFromAPI(result.data[i], result.data)
-
                         }
                     },
                     (error) => {
@@ -81,7 +74,6 @@ function UsersList({ itemsPerPage, sendUserDataToDataList }) {
         }
 
         async function getUserEmailFromAPI(user, items) {
-            console.log("fetching emails...")
             return fetch(`https://dummyapi.io/data/v1/user/${user.id}`, {
                 method: 'GET',
                 headers: {
@@ -117,12 +109,10 @@ function UsersList({ itemsPerPage, sendUserDataToDataList }) {
 
     }, [itemOffset, itemsPerPage]);
 
-    // Invoke when user click to request another page.
+    // Invoke when user clicks to request another page in the pagination component.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % items.length;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
+
         setItemOffset(newOffset);
 
     };

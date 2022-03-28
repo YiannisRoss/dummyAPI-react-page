@@ -55,3 +55,9 @@
       min-width: fit-content;
       min-height: fit-content;
     }
+
+@media only screen and (max-device-width: 480px) {
+    .data-list {
+        width: 100%;
+      }
+}

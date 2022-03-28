@@ -71,5 +71,11 @@ line-height: 1.5;
     align-items: center;
   }
   
+  #data-lists-container {
+  
+    width: 100%;
+    height: min-content;
+    flex-direction: column;
+  }
   
 }

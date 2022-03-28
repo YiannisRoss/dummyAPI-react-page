@@ -76,6 +76,7 @@ line-height: 1.5;
     width: 100%;
     height: min-content;
     flex-direction: column;
+    justify-content: space-between;
   }
   
 }

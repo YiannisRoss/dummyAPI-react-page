@@ -6,9 +6,9 @@ import "./UsersList.scss"
 
 function Items({ currentItems }) {
     return (
-        <><table>
-            <tbody>
-                <tr>
+        <><table id='users-list-table'>
+            <tbody id='users-list-table-body'>
+                <tr id='users-list-header'>
                     <th>ID</th>
                     <th>Title</th>
                     <th>First Name</th>
@@ -19,7 +19,7 @@ function Items({ currentItems }) {
 
                 {currentItems &&
                     currentItems.map((item) => (
-                        <tr>
+                        <tr className='users-list-row'>
                             <td>{item.id}</td>
                             <td>{item.title}</td>
                             <td>{item.firstName}</td>
@@ -87,7 +87,9 @@ function UsersList({ itemsPerPage, sendUserDataToDataList }) {
 
                         for (let i = 0; i < items.length; i++) {
                             if (items[i].id === user.id) {
+
                                 items[i].email = result.email
+
                                 setItems(items)
 
                             }

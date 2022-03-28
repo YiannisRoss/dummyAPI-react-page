@@ -41,6 +41,67 @@ th {
 
 @media only screen and (max-device-width: 480px) {
 
+  #users-list {
+    border-radius: 0%;
+  }
+  #users-list-table {
+    width: 100%;
+  }
+  #users-list-table-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #users-list-header{
+    display: none;
+  }
+  .users-list-row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5% !important;
+    background-color: rgb(141, 141, 141);
+  }
+ // make table more user-friendly for mobile users
+  table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not with display: none;) for accessibility */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Add labels
+	*/
+	td:nth-of-type(1):before { content: "ID"; }
+	td:nth-of-type(2):before { content: "Title"; }
+	td:nth-of-type(3):before { content: "First Name"; }
+	td:nth-of-type(4):before { content: "Last Name"; }
+	td:nth-of-type(5):before { content: "Email"; }
+
 
 }
 

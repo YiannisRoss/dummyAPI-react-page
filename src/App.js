@@ -27,7 +27,7 @@ class App extends React.Component {
     let boxList = []
     let boxCount = 4
     for (let i = 0; i < boxCount; i++) {
-      let newBox = <Box label={i + 1} />
+      let newBox = <Box label={i + 3} />
       boxList = boxList.concat(newBox)
 
     }

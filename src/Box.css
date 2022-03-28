@@ -11,3 +11,11 @@
     top: 10%;
     box-shadow: 10px 5px 5px rgb(145, 137, 137);
   }
+
+
+@media only screen and (max-device-width: 480px) {
+  .box {
+    width: 80%;
+  }
+
+}

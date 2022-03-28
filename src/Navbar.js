@@ -2,11 +2,7 @@ import './Navbar.scss';
 import React from "react"
 import PropTypes from "prop-types"
 class Navbar extends React.Component {
-    // constructor(props) {
-    //     super(props);
 
-
-    // }
 
     render() {
 
@@ -17,7 +13,7 @@ class Navbar extends React.Component {
                 <div id="navbar">
                     <button onClick={() => {
                         this.props.toggleSidebar()
-                    }}>Button</button>
+                    }}>Sidebar</button>
                     <div id="title-container">
                         <h1>React dummyAPI data page</h1>
                     </div>

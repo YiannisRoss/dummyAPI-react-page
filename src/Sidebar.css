@@ -1,8 +1,34 @@
+
+
+
+
 #sidebar {
     width: 20vw;
     height: 95vh;
     background-color: #E38627;
-    display: block;
+    
+    
     font-family: "Raleway", sans-serif;
+    z-index: 1;
 
+}
+
+#sidebar-list {
+    display: flex;
+    flex-direction: column;
+    list-style: inside;
+
+
+}
+
+@media only screen and (max-device-width: 480px) {
+
+    #sidebar {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #E38627;
+        font-family: "Raleway", sans-serif;
+    
+    }
 }

@@ -21,5 +21,9 @@ https://dummyapi.io/
 
 The pie chart was generated with the React Minimal Pie Chart package: https://www.npmjs.com/package/react-minimal-pie-chart
 
+## react-paginate
+
+The users list was paginated with react-paginate: https://github.com/AdeleD/react-paginate
+
 
 Mobile view available as well.

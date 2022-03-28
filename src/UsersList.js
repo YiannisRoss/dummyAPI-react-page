@@ -18,7 +18,7 @@ function Items({ currentItems }) {
 
                 {currentItems &&
                     currentItems.map((item) => (
-                        <tr className='users-list-row'>
+                        <tr className='users-list-row' key={item.id}>
                             <td>{item.id}</td>
                             <td>{item.title}</td>
                             <td>{item.firstName}</td>

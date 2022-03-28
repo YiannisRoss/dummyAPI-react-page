@@ -1,6 +1,5 @@
 import "./DataLists.css"
 import React from "react"
-import PropTypes from "prop-types"
 import UsersList from "./UsersList";
 import { PieChart } from "react-minimal-pie-chart";
 
@@ -11,13 +10,10 @@ class DataLists extends React.Component {
             userData: []
         };
 
-
         this.sendUserDataToDataList = this.sendUserDataToDataList.bind(this);
-
     }
 
     sendUserDataToDataList(data) {
-
         this.setState({
             userData: data
         });
@@ -33,7 +29,6 @@ class DataLists extends React.Component {
         for (let i = 0; i < userData.length; i++) {
             switch (userData[i].title) {
                 case "mr":
-
                     titleOccurences['mr']++
                     break;
                 case "ms":
@@ -46,7 +41,6 @@ class DataLists extends React.Component {
                 case "miss":
                     titleOccurences['miss']++
                     break;
-
                 default:
             }
         }
@@ -54,7 +48,6 @@ class DataLists extends React.Component {
     }
 
     togglePieChartPopup(pieSegmentIndex) {
-        console.log('toggle piechart popup called on segment index ' + pieSegmentIndex)
         let selectedSegment
         let selectedSegmentText
         let pieData = this.analyzeUserTitles(this.state.userData)
@@ -75,7 +68,6 @@ class DataLists extends React.Component {
                 break;
             default:
         }
-        console.log('should be ' + selectedSegment)
         selectedSegmentText = `Title "${selectedSegment}" appears ${pieData[selectedSegment.toLowerCase()]} times`
 
         let popupElement = document.getElementById('pie-chart-popup')
@@ -107,11 +99,6 @@ class DataLists extends React.Component {
 
     render() {
         let pieData = this.analyzeUserTitles(this.state.userData)
-
-        console.log("data lists state:")
-        console.log(this.state.userData)
-        console.log("pie data:")
-        console.log(pieData)
 
         return (
             <React.Fragment>

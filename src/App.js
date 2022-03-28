@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Box from './Box';
-import UsersList from './UsersList';
-import { PieChart } from 'react-minimal-pie-chart';
+
 import DataLists from './DataLists';
 
 class App extends React.Component {
@@ -13,7 +12,6 @@ class App extends React.Component {
     this.state = {
       isSidebarVisible: false
     };
-
 
     this.toggleSidebar = this.toggleSidebar.bind(this);
   }

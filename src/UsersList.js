@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import ReactPaginate from 'react-paginate';
 import "./UsersList.scss"
 
@@ -87,18 +86,13 @@ function UsersList({ itemsPerPage, sendUserDataToDataList }) {
 
                         for (let i = 0; i < items.length; i++) {
                             if (items[i].id === user.id) {
-
                                 items[i].email = result.email
-
                                 setItems(items)
-
                             }
                         }
-
                         setCurrentItems(items.slice(itemOffset, endOffset));
                         setPageCount(Math.ceil(items.length / itemsPerPage));
                         sendUserDataToDataList(items)
-
                     },
                     (error) => {
                         console.log(error)

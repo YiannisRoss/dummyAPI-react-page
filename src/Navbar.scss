@@ -2,14 +2,15 @@
 
     width: 100vw;
     height: 5vh;
-    color: #fff !important;
-    background-color: #000 !important;
+    color: rgb(0, 0, 0) !important;
+    background-color: #C13C37 !important;
 
     display: flex;
     // justify-content: center;
 
-    button{
+    img{
         z-index: 10; //to avoid overlapping with the title div
+        cursor: pointer;
     }
 
     #title-container {

@@ -11,9 +11,9 @@ class Navbar extends React.Component {
             <React.Fragment>
 
                 <div id="navbar">
-                    <button onClick={() => {
+                    <img src='https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png' onClick={() => {
                         this.props.toggleSidebar()
-                    }}>Sidebar</button>
+                    }} alt='Open sidebar button'></img>
                     <div id="title-container">
                         <h1>React dummyAPI data page</h1>
                     </div>

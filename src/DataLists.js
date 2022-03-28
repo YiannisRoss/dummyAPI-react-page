@@ -61,22 +61,22 @@ class DataLists extends React.Component {
 
         switch (pieSegmentIndex) {
             case 0:
-                selectedSegment = 'mr'
+                selectedSegment = 'Mr'
 
                 break;
             case 1:
-                selectedSegment = 'ms'
+                selectedSegment = 'Ms'
                 break;
             case 2:
-                selectedSegment = 'mrs'
+                selectedSegment = 'Mrs'
                 break;
             case 3:
-                selectedSegment = 'miss'
+                selectedSegment = 'Miss'
                 break;
             default:
         }
         console.log('should be ' + selectedSegment)
-        selectedSegmentText = `Title "${selectedSegment}" appears ${pieData[selectedSegment]} times`
+        selectedSegmentText = `Title "${selectedSegment}" appears ${pieData[selectedSegment.toLowerCase()]} times`
 
         let popupElement = document.getElementById('pie-chart-popup')
         if (popupElement.style.display === 'block') {
@@ -85,7 +85,23 @@ class DataLists extends React.Component {
         else {
             popupElement.style.display = 'block'
             popupElement.innerHTML = selectedSegmentText
-
+            let popupColor = null
+            switch (selectedSegment) {
+                case 'Mr':
+                    popupColor = '#E38627'
+                    break;
+                case 'Ms':
+                    popupColor = '#C13C37'
+                    break;
+                case 'Mrs':
+                    popupColor = '#6A2135'
+                    break;
+                case 'Miss':
+                    popupColor = '#5599AA'
+                    break;
+                default:
+            }
+            popupElement.style.backgroundColor = popupColor
         }
     }
 

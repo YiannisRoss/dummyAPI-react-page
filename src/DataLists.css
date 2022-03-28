@@ -48,6 +48,10 @@
       bottom: 0x;
       width: 50%;
       height: 10%;
-      background-color: red;
-        display: none;
+      background-color: #ccc;
+      display: none;
+      border: 5px solid #2d4c53;
+      border-radius: 10%;
+      min-width: fit-content;
+      min-height: fit-content;
     }

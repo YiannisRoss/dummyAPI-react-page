@@ -1,22 +1,19 @@
 * {
   margin: 0 !important; /* CSS reset */
-	padding: 0;
-	/* border: 0 !important; */
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  padding: 0;
+  /* border: 0 !important; */
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   box-sizing: border-box;
-
-
 }
 
 #container {
   display: flex;
   flex-direction: column;
   font-size: 15px;
-line-height: 1.5;
+  line-height: 1.5;
 }
-
 
 #main-page-container {
   display: flex;
@@ -30,7 +27,6 @@ line-height: 1.5;
 }
 
 #boxes-container {
-  
   width: auto;
   height: 25vh;
   flex-direction: row;
@@ -38,18 +34,12 @@ line-height: 1.5;
   justify-content: space-around;
 }
 
-  
 #data-lists-container {
-  
   width: auto;
   height: 70vh;
   justify-content: space-evenly;
   display: flex;
 }
-
-  
-
-
 
 @media only screen and (max-device-width: 810px) {
   #container {
@@ -60,12 +50,11 @@ line-height: 1.5;
     width: 100%;
   }
 
-  #page-contents{
+  #page-contents {
     display: inherit;
     justify-content: space-between;
   }
   #boxes-container {
-  
     width: 100%;
     flex-direction: row;
     display: flex;
@@ -73,14 +62,13 @@ line-height: 1.5;
     justify-content: space-around;
     align-items: center;
   }
-  
+
   #data-lists-container {
     margin-top: 10% !important;
-  
+
     width: 100%;
     height: auto;
     flex-direction: column;
     justify-content: space-between;
   }
-  
 }

@@ -25,5 +25,4 @@ The pie chart was generated with the React Highcharts library: https://www.highc
 
 The users list was paginated with react-paginate: https://github.com/AdeleD/react-paginate
 
-
 Mobile view available as well.

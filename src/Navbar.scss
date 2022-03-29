@@ -1,30 +1,26 @@
 #navbar {
+  width: 100vw;
+  height: 5vh;
+  color: rgb(255, 255, 255) !important;
 
-    width: 100vw;
-    height: 5vh;
-    color: rgb(255, 255, 255) !important;
-   
-    background-color: #6A2135  !important;
+  background-color: #6a2135 !important;
 
+  display: flex;
+  // justify-content: center;
+
+  img {
+    z-index: 10; //to avoid overlapping with the title div
+    cursor: pointer;
+  }
+
+  #title-container {
+    position: absolute;
+    width: 100%;
     display: flex;
-    // justify-content: center;
-
-    img{
-        z-index: 10; //to avoid overlapping with the title div
-        cursor: pointer;
+    justify-content: center;
+    h1 {
+      width: fit-content;
+      font-size: large;
     }
-
-    #title-container {
-        position: absolute;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        h1{
-            width: fit-content;
-            font-size: large;
-
-        }
-        
-    }
+  }
 }
-

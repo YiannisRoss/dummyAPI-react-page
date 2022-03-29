@@ -1,34 +1,24 @@
-
-
-
-
 #sidebar {
-    width: 20vw;
-    height: 95vh;
-    background-color: #C13C37;
-    
-    
-    font-family: "Raleway", sans-serif;
-    z-index: 1;
+  width: 20vw;
+  height: 95vh;
+  background-color: #c13c37;
 
+  font-family: "Raleway", sans-serif;
+  z-index: 1;
 }
 
 #sidebar-list {
-    display: flex;
-    flex-direction: column;
-    list-style: inside;
-
-
+  display: flex;
+  flex-direction: column;
+  list-style: inside;
 }
 
 @media only screen and (max-device-width: 810px) {
-
-    #sidebar {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #E38627;
-        font-family: "Raleway", sans-serif;
-    
-    }
+  #sidebar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e38627;
+    font-family: "Raleway", sans-serif;
+  }
 }

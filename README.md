@@ -17,9 +17,9 @@ You may also see any lint errors in the console.
 dummyAPI is a ready to use API Service full of dummy fake data. In this project, I used it to populate the users list and pie chart.
 https://dummyapi.io/
 
-## minimal-pie-chart
+## Highcharts
 
-The pie chart was generated with the React Minimal Pie Chart package: https://www.npmjs.com/package/react-minimal-pie-chart
+The pie chart was generated with the React Highcharts library: https://www.highcharts.com/
 
 ## react-paginate
 

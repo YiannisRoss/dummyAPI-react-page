@@ -109,8 +109,7 @@ class DataLists extends React.Component {
                 plotFill: '#ccc',
                 plotBorderWidth: null,
                 plotShadow: false,
-                type: 'pie',
-                colors: ['#E38627', '#C13C37', '#6A2135', '#5599AA']
+                type: 'pie'
             },
             title: {
                 text: 'Distribution of titles in user data'

@@ -1,8 +1,4 @@
-#pie-chart-legend {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-}
+
 
 .data-list {
   display: flex;
@@ -32,26 +28,8 @@ h3 {
   top: 0px;
   font-weight: bold;
 }
-#pie-chart-container {
-  width: 70%;
-  height: 70%;
-  max-width: 60%;
-  display: flex;
-}
 
-#pie-chart-popup {
-  position: absolute;
-  margin-top: -5%;
-  bottom: 0x;
-  width: 50%;
-  height: 10%;
-  background-color: #ccc;
-  display: none;
-  border: 5px solid #2d4c53;
-  border-radius: 10%;
-  min-width: fit-content;
-  min-height: fit-content;
-}
+
 
 h3 {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica,

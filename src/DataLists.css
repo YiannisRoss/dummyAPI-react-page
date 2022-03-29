@@ -56,6 +56,8 @@
       min-height: fit-content;
     }
 
+
+
 @media only screen and (max-device-width: 810px) {
     .data-list {
         width: 100%;
@@ -69,4 +71,36 @@
     margin-top: 10% !important;
   
     }
+}
+
+.highcharts-point.highcharts-color-0,
+.highcharts-legend-item.highcharts-color-0, .highcharts-point,
+.highcharts-tooltip, .highcharts-color-0,.highcharts-tooltip.highcharts-color-0,
+.highcharts-data-label-connector.highcharts-color-0  {
+    fill: #E38627;
+    stroke: #E38627;
+}
+
+.highcharts-point.highcharts-color-1,
+.highcharts-legend-item.highcharts-color-1, .highcharts-point,
+.highcharts-tooltip, .highcharts-color-1,.highcharts-tooltip.highcharts-color-1,
+.highcharts-data-label-connector.highcharts-color-1 {
+    fill: #C13C37;
+    stroke: #C13C37;
+}
+
+.highcharts-point.highcharts-color-2,
+.highcharts-legend-item.highcharts-color-2 .highcharts-point,
+.highcharts-tooltip, .highcharts-color-2,.highcharts-tooltip.highcharts-color-2,
+.highcharts-data-label-connector.highcharts-color-2 {
+    fill: #6A2135;
+    stroke: #6A2135;
+}
+
+.highcharts-point.highcharts-color-3,
+.highcharts-legend-item.highcharts-color-3 .highcharts-point,
+.highcharts-tooltip, .highcharts-color-3,.highcharts-tooltip.highcharts-color-3,
+.highcharts-data-label-connector.highcharts-color-3 {
+    fill: #5599AA;
+    stroke: #5599AA;
 }

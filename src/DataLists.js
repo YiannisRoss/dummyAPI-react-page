@@ -2,6 +2,9 @@ import "./DataLists.css"
 import React from "react"
 import UsersList from "./UsersList";
 import { PieChart } from "react-minimal-pie-chart";
+import { render } from 'react-dom';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 
 class DataLists extends React.Component {
     constructor(props) {
@@ -99,7 +102,55 @@ class DataLists extends React.Component {
 
     render() {
         let pieData = this.analyzeUserTitles(this.state.userData)
+        const options = {
+            chart: {
+                backgroundColor: '#ccc',
+                plotBackgroundColor: '#ccc',
+                plotFill: '#ccc',
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                colors: ['#E38627', '#C13C37', '#6A2135', '#5599AA']
+            },
+            title: {
+                text: 'Distribution of titles in user data'
+            },
 
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                name: 'Occurrences',
+                colorByPoint: true,
+                data: [{
+                    name: 'Mr',
+                    y: pieData['mr'],
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'Ms',
+                    y: pieData['ms']
+                }, {
+                    name: 'Mrs',
+                    y: pieData['mrs']
+                }, {
+                    name: 'Miss',
+                    y: pieData['miss']
+                }]
+            }]
+        }
         return (
             <React.Fragment>
 
@@ -108,39 +159,18 @@ class DataLists extends React.Component {
                     <UsersList itemsPerPage={10} sendUserDataToDataList={this.sendUserDataToDataList} />
 
                 </div>
-                <div id="titles-distribution-container" className='data-list'>
-                    <h3>Titles distribution</h3>
-                    <div id="pie-chart-legend">
-                        <p style={{ backgroundColor: '#E38627' }}>Mr: {pieData['mr']}</p>
-                        <p style={{ backgroundColor: '#C13C37' }}>Ms: {pieData['ms']}</p>
-                        <p style={{ backgroundColor: '#6A2135' }}>Mrs: {pieData['mrs']}</p>
-                        <p style={{ backgroundColor: '#5599AA' }}>Miss: {pieData['miss']}</p>
-                    </div>
-                    <div id='pie-chart-container'>
-                        <div id='pie-chart-popup'>
 
-                        </div>
-                        <PieChart
-                            onMouseOver={(e, segmentIndex) => {
 
-                                this.togglePieChartPopup(segmentIndex)
-                            }}
-                            onMouseOut={(e, segmentIndex) => {
+                <HighchartsReact
 
-                                this.togglePieChartPopup(segmentIndex)
-                            }}
-                            data={[
-                                { title: 'mr', value: pieData['mr'], color: '#E38627' },
-                                { title: 'ms', value: pieData['ms'], color: '#C13C37' },
-                                { title: 'mrs', value: pieData['mrs'], color: '#6A2135' },
-                                { title: 'miss', value: pieData['miss'], color: '#5599AA' },
-                            ]}
+
+                    highcharts={Highcharts}
+                    containerProps={{ className: 'data-list', id: "titles-distribution-container" }}
+                    options={options}
+                />
 
 
 
-                        />
-                    </div>
-                </div>
 
 
 

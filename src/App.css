@@ -51,7 +51,7 @@ line-height: 1.5;
 
 
 
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 810px) {
   #container {
     display: flex;
     flex-direction: column;

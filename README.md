@@ -1,6 +1,6 @@
 # dummyAPI react project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A front-end project with fake data drawn from an API.
 
 In the project directory, you can run:
 
